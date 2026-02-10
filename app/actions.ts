@@ -3,7 +3,8 @@
 import { cookies } from "next/headers";
 
 export async function login(password: string) {
-    if (password.trim().toLowerCase() === "tanmay") {
+    const p = password.trim().toLowerCase();
+    if (p === "tanmay" || p === "tanmay bhat") {
         const cookieStore = await cookies();
         cookieStore.set("love_access_token", "true", {
             maxAge: 1800, // 30 minutes in seconds
